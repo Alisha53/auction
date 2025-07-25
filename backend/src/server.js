@@ -82,7 +82,12 @@ class Server {
             await this.database.initializeTables();
             console.log('Database connected and initialized successfully');
         } catch (error) {
-            console.error('Database initialization failed:', error);
+            console.error('Database initialization failed:', error.message);
+            console.error('\n🔧 To fix this issue:');
+            console.error('1. Make sure PostgreSQL is running');
+            console.error('2. Check your database credentials in .env file');
+            console.error('3. Run: npm run setup-db');
+            console.error('4. Or create the database manually and restart the server\n');
             process.exit(1);
         }
     }

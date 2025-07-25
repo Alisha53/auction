@@ -88,18 +88,22 @@ online-auction-system/
 
 2. **Set up environment variables:**
    ```bash
-   cp .env.example .env
+   # .env file is already created with default settings
+   # Update database password if needed:
+   nano .env
    ```
-   Edit `.env` with your database credentials and JWT secret.
 
-3. **Set up PostgreSQL database:**
-   - Create a database named `auction_db`
-   - Update database credentials in `.env`
+3. **Set up PostgreSQL database (Automatic):**
+   ```bash
+   # This creates database, tables, and sample data
+   npm run setup-db
+   ```
 
 4. **Start the backend server:**
    ```bash
    npm run dev
    ```
+   Server runs on `http://localhost:5000`
 
 ### Frontend Setup
 
@@ -114,9 +118,38 @@ online-auction-system/
    npm start
    ```
 
+2. **Start the frontend development server:**
+   ```bash
+   npm start
+   ```
+   Frontend runs on `http://localhost:3000`
+
 ### Running Both Services
 
 From the root directory:
+```bash
+# Install all dependencies
+npm run install-all
+
+# Start both backend and frontend
+npm run dev
+```
+
+## 🔑 Default Login Credentials
+
+After running the database setup, you can log in with these accounts:
+
+| Role   | Email                | Password   |
+|--------|---------------------|------------|
+| Admin  | admin@auction.com   | admin123   |
+| Bidder | john@example.com    | bidder123  |
+| Seller | jane@example.com    | seller123  |
+
+## 🗄️ Database Setup
+
+For detailed database setup instructions, see [DATABASE_SETUP.md](DATABASE_SETUP.md)
+
+**Quick setup:**
 ```bash
 npm run install-all
 npm run dev
