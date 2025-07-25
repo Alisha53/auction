@@ -1,0 +1,19 @@
+{
+  "name": "online-auction-system",
+  "version": "1.0.0",
+  "description": "A comprehensive online auction system with bidder, seller, and admin roles",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "start": "node backend/src/server.js"
+  },
+  "keywords": ["auction", "real-time", "websockets", "react", "nodejs"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
